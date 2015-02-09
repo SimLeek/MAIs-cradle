@@ -1,0 +1,5 @@
+#ignore images and audio
+*.bmp
+*.mp3
+*.gif
+*.png
