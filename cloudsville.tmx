@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="100" tileheight="41" nextobjectid="1">
+ <tileset firstgid="1" name="Cloud Block" tilewidth="100" tileheight="171">
+  <image source="sprites/PlanetCute PNG/Cloud Block.png" width="101" height="171"/>
+  <tile id="0">
+   <properties>
+    <property name="Sound" value="Fluff"/>
+   </properties>
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="132.5" width="99.25" height="38.25"/>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <tileset firstgid="2" name="Spritesheet" tilewidth="100" tileheight="164">
+  <image source="sprites/PlanetCute PNG/Spritesheet.png" width="707" height="1148"/>
+ </tileset>
+ <tileset firstgid="51" name="column" tilewidth="100" tileheight="171">
+  <image source="sprites/PlanetCute PNG/column.png" width="101" height="171"/>
+ </tileset>
+ <tileset firstgid="52" name="Rainbow Blocks" tilewidth="101" tileheight="171">
+  <image source="sprites/PlanetCute PNG/Rainbow Blocks.png" width="505" height="171"/>
+ </tileset>
+ <tileset firstgid="57" name="Condensed Air Block" tilewidth="101" tileheight="171">
+  <image source="sprites/PlanetCute PNG/Condensed Air Block.png" width="101" height="171"/>
+ </tileset>
+ <tileset firstgid="58" name="Air Blocks" tilewidth="101" tileheight="171">
+  <image source="sprites/PlanetCute PNG/Air Blocks.png" width="505" height="171"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt20EKgzAQBdB4hp6lVO9/seKiYHUSY2nBOu+BRBR3+SSTwVKAsxgWV/RsiD6CJPYyIB8AAMCvtep2YJsF+QAA+C77K9iSCwAAAADOzvkVvBsW46PICLzMWZhWoz4I2a3/ra1dkM0878cS52EK7iGLVh6sIWQmExDby0NUo8PV9WTC+kFGPTmI3kEGtUzcVqOzKrLq7XNYP8iqp8ehd05G81y/l3ouWtmBDHr3VWp1svmk/pANMjhSc9T2W3BlR3qCznrJqLfeUJuTlfoD2pbzProfi2xAjVwAAAAAAAAAAAD/4Akbugf2
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt3VFqhDAQBuD0Ml6gLd29/8W2sgiaZkJW+9Bmvg8CguZtfjIhiqVAKW/BgOzqTNy/x63IB6y2TNzLMSPyAcdM7DOiz4KnLQdfJd6LyAmZ9daQzyIf0Oq19tdAv9cC4n4LeFrz8FH0VxCxbgAAAMDfYY8OR84H4adWJuSD7FqZaN2HbPbZWAaegyxerXkZIYuRNWOpnpUPMojqvJUV2SCL0b1GNA9mdXYNkA0yOFPjskEWW52P9lWyQRZRb7Vm5b0x6nkwu+hsfGSejDC7s3W+XJgL/8m+zvf7kJE9iYwwsyv17XyQ2V2tbflgZr+xfsDMnJ9DX13v0XU9B7Lo/euj9W2tfJBR9I25d9qhTy4AAAAAAAAAAKDtAVVEB4o=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt3EEOgjAQQFG4jBfg/nczBBeInYJgBDrvJWw0JkbnR0vRrjvf8Dr6s58IXJg+/s9rfh/eK4g76GcHZFZqYFyDPDqdwCia/2Hlfsii9jnhnBZMamsSQAuwRiNQ59wVAAAAXIc1OrxbXnulEYivSdQHmW3Z69AIGX0z9xohkz3zrhEy2Dvn+qB12oBPR6451AYtOzLf2qB1Pjcg5lwVlK39/8L8KD0WWmf9AbGjM64RWqcRKPvFbOuDVukDYr5bQZ09QqizTwh10W/Lo31EfZDRvJFlJ6XbgYkuAAAAAAAAAACAO3gCMUoCRg==
+  </data>
+ </layer>
+ <layer name="Tile Layer 4" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt20EOgjAQQFE4U+9/N2N0gdgZhRqjnfcSNhI3Zn6gUJcF+tb7wff4vf+HPiBuYF00Ale9BtrmnE6oLpr/9uI8VJFdJ1pyDirJ1iSAFuAVjUDOsysAAAD4Hdbo8Gi/90ojEO9J1AeVvfOuQyNUdGTuNUIlZ+ZdI1Rwds71wey0Ac9G9hxqg1mN7sXVBrNz3YCYZ1XQl8152xxHvwuzsP6A2OiMa4TZaQT6PjHb+mBW+oDY6PpcG8zOO0LIeU8Iuei/5dF9lD6oaNvIvpPe58CNLgAAAAAAAAAAADjqAtylAYk=
+  </data>
+ </layer>
+ <layer name="Tile Layer 5" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt3EsOwiAARdF2Tex/b04V+WiJse07J+nA4MBYbhCMbts57P9+AaG879fhXkG/g/3pgmStBsrTmE5I15v/ZTIOKUbrRBmMQZLRngTQAsxoBMacXQEAAMB52KPDq71xQbpWF/og3awHjZDq0zVCI6T5ds5r5Hzcj984Mtf1QQJtwLuj51Ha4M5Wzmq1QQJtQJ+zKmib/f9C6YxphBRH57pGSLAyzzVCAo1A2+r81gd3pg/oW92fa4O78x0hjNXrwd4Yaz0fUtR99H4/6LMVyeoOtuqxNqBNFwAAAAAAAAAAAHBtD01WAYs=
+  </data>
+ </layer>
+ <layer name="Tile Layer 6" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt28EKgkAUQNFxlf/j//9biEkW41OHEuudA26iheC7TuJUyrm6x8G1dcW1glGtg65oBGa1DoaiE5itNaAPmEQtaAQm0TMJoAfY4tkDYvoAAAAAAPhN3oHAq/d9uxqB7R40QlZ71wiNkM2RmdcHmbS00X/vdOAyrBvwtLzvt7Rx+/gZwTVZN6Bu78xrg2zWZn44+H34V0dnXiNk0jLvGiETjUBd65zrgwz0AXXjO0K/rSAWzbu97RD/D2rZgzbIaq2JvvK5/VdkFO1Xt24AAAAAAAAAAAAAAGe4A78PASc=
+  </data>
+ </layer>
+ <layer name="Tile Layer 7" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt3EEOgyAQQFG7smey1fsfqxrbuABUuoFk3kvYs/kZCMZhAHozrutRWM+G+4Ke5PoADqU5MrbcFHTg10CpEWDnLgLnzA84pw0oe61rar0J6NQ87I0AqWVd79abgE5tbZgfkLd8F5CaBvdzKNnOVu4fkLe1MbfeBHTK+yCkfKMIqVwHGiG60rwwQ4juqgNtEJW5AXnagLy75yltEJG5AXl3OtAIkdXcPTRCNLV9aIRoanrQCJFcfUNijhBZTQfaIJqrNw9zg+hq7+f+L0o0zlXwP20AAAAAAAAAAAAAAAAcPrY2BLw=
+  </data>
+ </layer>
+ <layer name="Tile Layer 8" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2ksKhTAMBVAnogtwJ+5/byq8gqj18xRayDkQEEeZXExjmwaO9aUbgArJBVzr5mpLNwGV60o3AJXqM88AcMV3AwAAAAAAAOJw/wqAt9w1IToZAAB4Z/zVsKn0fmGHRVRH2VhnBCLLZSMVRJT2VLkMyAeYr+DMnfM5RORfIDxjlwvAV8xhRGeugj25gP/JDwAAAAAAAAAAAAAAALWaAMc9BV4=
+  </data>
+ </layer>
+ <layer name="Tile Layer 9" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJwDAMBMDvkgG0SfbfzQQ3JpAUqQy6gwcJ1V8oAQAAAAAAAAAAAAAAAAAAAGA3188bdFFL8pihu7sL57If0Q/4oh8w1UugO/85AAAAAAAAAAAAAAAAAAAAAABAXwPsAAH0
+  </data>
+ </layer>
+ <layer name="Tile Layer 10" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJACAQA8AM4Sbuv5uFjYg2VsLfQeAhdYpPAAAAAAAAAAAAAAAAAAAAAJL+2EEVbUm2G6o7bcE+4M4+YGqXQHX+cwAAAAAAAAAAAAAAAAAAAAAAAPjDAPYaAeU=
+  </data>
+ </layer>
+ <layer name="Tile Layer 11" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJACAMBMAM4Sbuv5uFjahpbCxyBw+Br79IBAAAAAAAAAAAAAAAAAAAAPzRHzuooi2J7YbqbluwD8jZB0wtCVTnPwcAAAAAAAAAAAAAAAAAAAAAAAA4DeqHAeU=
+  </data>
+ </layer>
+ <layer name="Tile Layer 12" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJACAMBMAMkU3cfzcLGxHTWAm5g4fA118kAgAAAAAAAAAAAAAAAAAAoI/x2EEXuSWOG7q7bcE+oGYfsGQR6M5/DgAAAAAAAAAAAAAAAAAAAAAAAMDvJt70AeU=
+  </data>
+ </layer>
+ <layer name="Tile Layer 13" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJADAIRUGHyCbuv1sWiIKBVLmDX1m/wggAAAAAAAAAAAAAAAAAAOClvLzBL1YxQB/Q0QfU9AFn/nMAAAAAAAAAAAAAAAAAAAAAAAAAYGIDRYsCrQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 14" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt17EJACAMRUGHcBP3383GgIgZQHMHv7F/EFsDAAAAAAAAAAAAAAAAAOA3Y60fi3eo7NbG3ghUlrURg8r0ATn3FeT8zwEAAAAAAAAAAAAAAAAAAAAAAAAA3jUBm9MFNQ==
+  </data>
+ </layer>
+</map>
