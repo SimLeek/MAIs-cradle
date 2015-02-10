@@ -7,7 +7,7 @@ ponyControl.__index = ponyControl
 local diag=0.70710678118
 local tileRatio=84/100
 
-function newPony(spriteFolder, world,
+function newPony(spriteFolder,
 		 upVar ,upCall, 
 		 downVar, downCall, 
 		 leftVar, leftCall, 
@@ -18,6 +18,8 @@ function newPony(spriteFolder, world,
 		 sleepVar, sleepCall)
 
 	local p = {}
+
+	p.character_type="pony"
 
 	p.upCall=upCall
 	p.upVar=upVar
@@ -34,14 +36,7 @@ function newPony(spriteFolder, world,
 	p.runCall=runCall
 	p.runVar=runVar
 	p.sleepCall=sleepCall
-	p.sleepVar=sleepVar
-
-	p.ponybody = love.physics.newBody(world,0,0,"dynamic")
-	p.ponybox = love.physics.newRectangleShape(24,12)
-	p.ponyFixture = love.physics.newFixture(p.ponybody,p.ponybox,1)
-	p.ponyFixture.controller=p
-	--p.ponyFixture:setRestitution(0.1)
-	p.ponybody:setBullet(True)
+	p.sleepVar=sleepVar	
 
 	p.ponyAnim = newAnimGroup(96,96,0.1,0)
 
@@ -316,7 +311,14 @@ function newPony(spriteFolder, world,
 
 end
 
-
+function ponyControl:addToWorld(world)
+	self.ponybody = love.physics.newBody(world,0,0,"dynamic")
+	self.ponybox = love.physics.newRectangleShape(24,12)
+	self.ponyFixture = love.physics.newFixture(self.ponybody,self.ponybox,1)
+	--p.ponyFixture:setRestitution(0.1)
+	self.ponyFixture:setUserData(self)
+	self.ponybody:setBullet(True)
+end
 
 function ponyControl:updateControl(dt)
 	if self.falling then

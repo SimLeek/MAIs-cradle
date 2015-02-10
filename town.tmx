@@ -134,7 +134,7 @@
    <polygon points="0,0 -51,0 -51,42 0,42"/>
   </object>
  </objectgroup>
- <objectgroup color="#100010" name="door 1" visible="0">
+ <objectgroup color="#100010" name="door 1">
   <object id="1248" x="561" y="609">
    <polygon points="0,0 -51,0 -51,42 0,42"/>
   </object>
@@ -223,7 +223,7 @@
    <polygon points="0,0 -102,0 -102,84 0,84"/>
   </object>
  </objectgroup>
- <objectgroup color="#100800" name="inside 1" visible="0">
+ <objectgroup color="#100800" name="inside 1">
   <object id="1250" x="612" y="294">
    <polygon points="0,0 -153,0 -255,84 -255,210 -153,294 -102,315 -51,315 0,294 102,210 102,84"/>
   </object>
@@ -300,7 +300,7 @@
    <polygon points="0,0 -153,210 51,378 867,378 867,336 306,-126 255,-126 153,-126"/>
   </object>
  </objectgroup>
- <objectgroup color="#101010" name="wall 1" visible="0">
+ <objectgroup color="#101010" name="wall 1">
   <object id="1254" x="612" y="210">
    <polygon points="0,0 -102,0 -102,42 -153,42 -153,84 -255,84 -255,168 -306,168 -306,294 -255,294 -255,378 -153,378 -153,420 -102,420 -102,336 -153,336 -153,294 -204,294 -204,252 -255,252 -255,210 -204,210 -204,168 -153,168 -153,126 0,126 0,210 51,210 51,252 102,252 102,294 0,294 0,336 -51,336 -51,420 0,420 0,378 51,378 51,420 102,420 102,336 153,336 153,252 204,252 204,210 153,210 153,126 102,126 102,84 0,84"/>
   </object>
@@ -923,7 +923,7 @@
    <polygon points="0,0 -51,0 -51,42 0,42"/>
   </object>
  </objectgroup>
- <objectgroup color="#001000" name="floor 1" visible="0">
+ <objectgroup color="#001000" name="floor 1">
   <object id="1253" x="5100" y="-21">
    <polygon points="0,-21 -5100,-21 -5100,2079 0,2079"/>
   </object>
@@ -936,7 +936,7 @@
  <objectgroup color="#200020" name="door 2" visible="0"/>
  <objectgroup color="#201000" name="inside 2" visible="0"/>
  <objectgroup color="#002000" name="floor 2" visible="0"/>
- <layer name="Tile Layer 3" width="100" height="100" visible="0">
+ <layer name="Tile Layer 3" width="100" height="100">
   <data encoding="base64" compression="zlib">
    eJztndtu3CAQhknVJFIVrSKtcr3cbJS27/9+DZLRoukwZjiYg/9PQmAzYF/w7zAYe40BYA5ev9NL75so4Lql25ZzddTmxtTF+rXEzgptJD62635sCczDa+8bKOAaKXPHKX2kts3RB1feawM99eW59w0Usro+uLZcMgZaaoHzHZfeN1GAny/5Mq2j8ynpfIgNbGxwzrexTBuJmvrwvG35S5BDH2V4LYR+Y3YfMgM+/vBln2t/+zl9/Ahy6KM+I8bnUuy8CnQs5+pD2wfY54kcjzLHoppYWSeSPmK+xeVvQXJI/iOMUW7kGDyYZY0qFmOfUR9cncvDeEPTZ8p5EOeJ5LX4mWhXe81oNlL1EfoLmkMfoBf0OST3TFJDrv/I7TPl/FkZJb6QGN1/5DwnkcjVR+y5BxdXhHEHdwzmIjbetOOQ21fyHqQrKRvmXGhviF1sT4sGLm4O6/x6MMbzuLxsicb3l8j5Uri1qpz1qxp90L60awV0/NfmD8lBObHxfBHqelC6bsXp450zTIDzHyngNx/MQi19aOZUOXtKAOhBjfmVFuijHxczx5pUL1rEH1qgjz742Bj6iNMi/tBytD5K9iuvgtPEs4E29jirPmrazYZfY/IaGQm6J0W7R0V635XWpfwGjjK/upnjnl9o3ytZiQtJqXuaZkGjD8PYcP3R46P9x9HAfzxij9XQvicLffzP2fXhWHXdqoU+uO+VlN7byJx5fhUykkZqzfOkPbF+jIflnDEL/6Gzm5lR9DET3L7E1PIMcHsyY8ers2ocAkANRppjnYUae9rBMcz+3aoZKd1TDI4D/qMcN85tJI/ZG6EejAtiER3WxPVhDP99RLqfCcwDfEk6ueug0MR8QBc6bIE99DEfiEPSqfH++Rn2iK/EGdexuDggJTawmdfLbQf6M+Je99bkriPV9B8AtIT+zkvlmuMxXKPawzL3Ygz0AdqjWUOKrSOVjFNJJzbSd851w+9fHfWelD3gGqAtboy575r9/k5/hfLe+1I17sNuZbvTZ64+pOPaWJKD/uR8vy91jP1ibGPvE7ae/9TQR0vsd/okx6AvX+bxm69BM8Zi+ojZjRQfHO0/HPctd1qxB1zPU/t/MWbHz4NyKI0dZtLH0fGHo5dGPNx/v4F0SvUhnR9JH1psJKVyZ8o9NAJ9lFEyv9qzm10fbyRZwZaD04hk34Kz6uMrwSYlHimNPyQ7aT8Ifd+U60PbpibWpI0tG5TvTD13jrYD9XA+WhNv7Gmkhf+g9nvtpBim1r1osWZfH1aoi/kOT694ZHVS/IaGFv6D1s+sj735FXduTxu9Y/bVqakR6blf6rnYc8LZ9cGlmG0u0AigsUSYpPiDazfqvnbbuT0AABzJP8fDPoo=
   </data>

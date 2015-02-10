@@ -79,29 +79,29 @@ end
 
 
 function collideBeginCall(a,b,coll)
-	if a.controller~=nil then
-		a.controller:beginCollide(b)
+	if a:getUserData()~=nil then
+		a:getUserData():beginCollide(b)
 	end
-	if b.controller~=nil then
-		b.controller:beginCollide(a)
+	if b:getUserData()~=nil then
+		b:getUserData():beginCollide(a)
 	end
 end
 
 function collideSolveCall(a,b,coll,normimp1,tanimp1,normimp2,tanimp2)
-	if a.controller~=nil then
-		a.controller:collideSolve(b,normimp1,tanimp1,normimp2,tanimp2)
+	if a:getUserData()~=nil then
+		a:getUserData():collideSolve(b,normimp1,tanimp1,normimp2,tanimp2)
 	end
-	if b.controller~=nil then
-		b.controller:collideSolve(a,normimp1,tanimp1,normimp2,tanimp2)
+	if b:getUserData()~=nil then
+		b:getUserData():collideSolve(a,normimp1,tanimp1,normimp2,tanimp2)
 	end
 end
 
 function collideEndCall(a,b,coll)
-	if a.controller~=nil then
-		a.controller:endCollide(b)
+	if a:getUserData()~=nil then
+		a:getUserData():endCollide(b)
 	end
-	if b.controller~=nil then
-		b.controller:endCollide(a)
+	if b:getUserData()~=nil then
+		b:getUserData():endCollide(a)
 	end
 end
 
@@ -112,8 +112,8 @@ function newLevel(map)
 	love.physics.setMeter(50)
 	l.map=sti.new(map)
 
-	l.music=love.audio.newSource("sound/" .. l.map.properties["music"])
-	l.music:play()
+	--l.music=love.audio.newSource("sound/" .. l.map.properties["music"])
+	--l.music:play()
 
 	l.world=love.physics.newWorld(0,0)
 
@@ -149,7 +149,6 @@ function newLevel(map)
 
 	return setmetatable(l,level)
 end
-
 
 function level:addPlayer(player,x,y)
 	self.player=player

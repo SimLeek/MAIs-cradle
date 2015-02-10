@@ -4,12 +4,12 @@ local AI = {}
 AI.__index = AI
 
 local function doNothing()
-	return false
+	return true
 end
 
 function newAI(name, personality,sprites,world)
 	local ai={}
-	ai.character = newPony(sprites,world,
+	ai.character = newPony(sprites,
 		
 		nil, doNothing,
 		nil, doNothing,
@@ -23,6 +23,8 @@ function newAI(name, personality,sprites,world)
 
 	ai.name=name
 	ai.personality=personality
+
+	ai.character:addToWorld(world)
 
 	ai.speach=dofile (personality .. "/dialogue.lua")
 
