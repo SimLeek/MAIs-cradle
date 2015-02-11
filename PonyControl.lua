@@ -537,27 +537,31 @@ function ponyControl:draw(x,y)
 	self.ponyAnim:draw(x,y)
 end
 
-function ponyControl:setCollisionCallbacks(beginCollideCall,endCollideCall,solveCollideCall)
+function ponyControl:setCollisionCallbacks(beginCollideVar,beginCollideCall,endCollideVar,endCollideCall,SolveCollideVar,solveCollideCall)
 	self.beginCollideCall=beginCollideCall
+	self.beginCollideVar=beginCollideVar
 	self.endCollideCall=endCollideCall
+	self.endCollideVar=endCollideVar
 	self.solveCollideCall=solveCollideCall
+	self.SolveCollideVar=SolveCollideVar
 end
 
 function ponyControl:beginCollide(obj)
 	if self.beginCollideCall~=nil then
-		self.beginCollideCall(obj)
+		self.beginCollideCall(self.beginCollideVar,obj)
 	end
 end
 
 function ponyControl:collideSolve(obj,ni1,ti1,ni2,ti2)
 	if self.solveCollideCall~=nil then
-		self.solveCollideCall(obj,ni1,ti1,ni2,ti2)
+		self.solveCollideCall(self.SolveCollideVar,obj,ni1,ti1,ni2,ti2)
 	end
 end
 
 function ponyControl:endCollide(obj)
+	print("col1")
 	if self.endCollideCall~=nil then
-		self.endCollideCall(obj)
+		self.endCollideCall(self.endCollideVar,obj)
 	end
 end
 

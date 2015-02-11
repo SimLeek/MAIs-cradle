@@ -6,11 +6,16 @@ function love.load()
 	require("libs.LoveFrames")
 	require("game-explore")
 
+	math.randomseed(os.time())
+
+	love.keyboard.setKeyRepeat(false)
+
 	loveframes.SetState("mainmenu")
-	local frame = loveframes.Create("frame")
+	frame = loveframes.Create("frame")
 	frame:SetName("OSPG MAIN MENU")
+	frame:SetResizable(true)
 	frame:Center()
-	
+	frame:ShowCloseButton(false)
 	local text=loveframes.Create("text", frame)
 	text:SetText("Welcome To the Open Source Pony Game!")
 	text.Update = function(object,dt)
@@ -39,12 +44,16 @@ function love.load()
 
 	frame:SetState("mainmenu")
 
+	require("DialogueWindow")	
+
 end
 
 function love.resize(w,h)
 	if maingame~=nil then
 		maingame:resize(w,h)
 	end
+	frame:Center()
+	dialogueWindow.resize()
 end
 
 function love.update(dt)
@@ -52,15 +61,15 @@ function love.update(dt)
 		maingame:update(dt)
 	end
 	loveframes.update(dt)
+	dialogueWindow.update(dt)
 end
 
 function love.draw()
-	love.graphics.draw(bgImage,0,0,0,1,1,0,0)
-	loveframes.draw()
+	love.graphics.draw(bgImage,0,0,0,1,1,0,0)	
 	if maingame~=nil then
 		maingame:draw()
 	end
-
+	loveframes.draw()
 end
 
 function love.mousepressed(x,y,button)
