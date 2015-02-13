@@ -261,7 +261,7 @@ function newPony(spriteFolder,
 	          s_f="hop_fal_f",s_b="hop_fal_b",
 		  s_fr="hop_fal_fr",s_fl="hop_fal_fl",
 		  s_br="hop_fal_br",s_bl="hop_fal_bl",
-		  sl_r="hop_fal_r",sl_l="hop_fal_l",
+	          sl_r="hop_fal_r",sl_l="hop_fal_l",
 	          sl_f="hop_fal_f",sl_b="hop_fal_b",
 		  sl_fr="hop_fal_fr",sl_fl="hop_fal_fl",
 		  sl_br="hop_fal_br",sl_bl="hop_fal_bl",
@@ -303,6 +303,10 @@ function newPony(spriteFolder,
 	p.leaping=false
 	p.jumptime=0
 
+	p.zv=0
+	p.z=0.25
+
+
 	p.speed=400
 
 	p.collidingWith={}
@@ -320,8 +324,16 @@ function ponyControl:addToWorld(world)
 	self.ponybody:setBullet(True)
 end
 
+function ponyControl:removeFromWorld()
+	print(self.ponybody)
+	self.ponybody=nil--:destroy()
+	self.ponybox=nil--:destroy()
+	self.ponyFixture=nil--:destroy()
+end
+
 function ponyControl:updateControl(dt)
-	if self.falling then
+	if self.falling or self.jumpstatus=="falling" then
+		--print(self.jumptime,self.jumpstatus)
 		self.jumptime=self.jumptime-dt
 		if self.jumptime<0 then
 			if self.jumpstatus=="start" then
@@ -338,20 +350,9 @@ function ponyControl:updateControl(dt)
 				if self.leaping==true then
 					self.ponyAnim:switchAnim("lp_fal")
 					self.jumpstatus="falling"
-					self.jumptime=0.1
 				else
 					self.ponyAnim:switchAnim("hop_fal")
 					self.jumpstatus="falling"
-					self.jumptime=0.1
-				end
-			elseif self.jumpstatus=="falling" then
-				if self.leaping==true then
-					self.ponyAnim:switchAnim("lp_lnd")
-					self.jumpstatus="landing"
-					self.jumptime=0.1
-				else
-					self.ponyAnim:switchAnim("hop_lnd")
-					self.jumpstatus="landing"
 					self.jumptime=0.1
 				end
 			elseif self.jumpstatus=="landing" then
@@ -364,7 +365,7 @@ function ponyControl:updateControl(dt)
 		end
 
 	end
-	if not self.falling then
+	if not self.falling and self.jumpstatus~="falling" then
 	if self.runCall(self.runVar) then
 		self.running=true
 	end
@@ -500,11 +501,13 @@ function ponyControl:updateControl(dt)
 			local x,y = self.ponybody:getLinearVelocity()
 			x=x*1.5
 			y=y*1.5
+			self.zv=self.zv+3
 			self.ponybody:setLinearVelocity(x,y)
 		else
 			self.falling=true
 			self.jumptime=0.2
 			self.jumpstatus="start"
+			self.zv=self.zv+3.5
 			self.ponyAnim:switchAnim("hop_st")
 		end
 	end
@@ -514,7 +517,28 @@ end
 function ponyControl:hitGround()
 	self.falling=false
 	self.ponybody:setLinearVelocity(0,0)
+	if math.abs(self.zv)>=8 then
+		print("damage: ", 4.7^((math.abs(self.zv)/8)-1))
+	end
+	self.zv=0
+		if self.leaping==true then
+			self.ponyAnim:switchAnim("lp_lnd")
+			self.jumpstatus="landing"
+			self.jumptime=0.1
+		else
+			self.ponyAnim:switchAnim("hop_lnd")
+			self.jumpstatus="landing"
+			self.jumptime=0.1
+		end
 end
+
+function ponyControl:fall()
+	self.falling=true
+	self.jumpstatus="falling"
+	self.ponyAnim:switchAnim("hop_fal")
+end
+
+
 
 function ponyControl:updateAnim(dt)
 	self.ponyAnim:update(dt)

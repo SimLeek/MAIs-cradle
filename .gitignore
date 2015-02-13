@@ -1,5 +1,5 @@
 #ignore images and audio
-*.bmp
-*.mp3
-*.gif
-*.png
+#*.bmp
+#*.mp3
+#*.gif
+#*.png

@@ -21,7 +21,7 @@ function newExploreGame(level, character, x, y)
 
 	eg.mainCharacter=character
 
-	eg.mainCharacter:addToWorld(eg.level.world)
+	eg.mainCharacter:addToWorld(eg.level.worlds[1])
 
 	eg.level:addPlayer(eg.mainCharacter,x,y)
 
