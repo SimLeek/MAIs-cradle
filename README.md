@@ -21,4 +21,6 @@ Then, right now the game should just work when you run love. If it doesn't, plea
 * [PlanetCute tileset](http://www.lostgarden.com/2007/05/dancs-miraculously-flexible-game.html)
 * [Reddit MLP Emotes](http://www.reddit.com/r/mylittlepony)
 
+#Licenses
 
+All software that does not specify its own license and is not listed as a seperate library will, by default, be placed under the [MIT License](http://opensource.org/licenses/MIT). Anything that is not software, is not given credit under the "Media Used" section, and does not include its own license, will, by default, be placed under the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/4.0/legalcode)
