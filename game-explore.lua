@@ -2,7 +2,7 @@ require("PonyControl")
 require("FinerControl")
 require("Collision")
 require("LevelLoad")
-local sti = require "sti"
+local sti = require "libs.sti"
 
 local transx=0
 local transy=0

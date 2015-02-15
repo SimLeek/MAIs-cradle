@@ -3,7 +3,7 @@ function love.load()
 
 	bgImage=love.graphics.newImage("backgrounds/Cloudsville.png")
 
-	require("libs.LoveFrames")
+	loveframes=require("libs.LoveFrames")
 	require("game-explore")
 
 	math.randomseed(os.time())

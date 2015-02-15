@@ -3,7 +3,7 @@ require("AI")
 local level = {}
 level.__index= level
 
-local sti = require "sti"
+local sti = require "libs.sti"
 
 local function object_to_wall_layer(layer, world)
 	walls={}

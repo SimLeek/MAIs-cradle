@@ -183,6 +183,7 @@ function Map:initWorldCollision(world)
 			tile = t.gid and self.tiles[t.gid]
 		}
 
+
 		if o.shape == "rectangle" then
 			o.r = object.rotation or 0
 			local cos = math.cos(math.rad(o.r))
@@ -791,30 +792,95 @@ function Map:drawLayer(layer)
 	framework.setColor(255, 255, 255, 255)
 end
 
-function Map:drawTileLayer(layer)
+function Map:drawTileLayer(t)
+	setmetatable(t,{__index={byTile=false}})
+	local layer, byTile =
+		t[1] or t.layer,
+		t[2] or t.byTile
 	if type(layer) == "string" or type(layer) == "number" then
 		layer = self.layers[layer]
 	end
 
 	assert(layer.type == "tilelayer", "Invalid layer type: " .. layer.type .. ". Layer must be of type: tilelayer")
 
-	local bw = layer.batches.width
-	local bh = layer.batches.height
-	local sx = math.ceil((self.drawRange.sx - layer.x / self.tilewidth	- 1) / bw)
-	local sy = math.ceil((self.drawRange.sy - layer.y / self.tileheight	- 1) / bh)
-	local ex = math.ceil((self.drawRange.ex - layer.x / self.tilewidth	+ 1) / bw)
-	local ey = math.ceil((self.drawRange.ey - layer.y / self.tileheight	+ 1) / bh)
-	local mx = math.ceil(self.width / bw)
-	local my = math.ceil(self.height / bh)
+	local bw,bh,sx,sy,ex,ey,mx,my
+	if not byTile then
+		 bw = layer.batches.width
+		 bh = layer.batches.height
+		 sx = math.ceil((self.drawRange.sx - layer.x / self.tilewidth	- 1) / bw)
+		 sy = math.ceil((self.drawRange.sy - layer.y / self.tileheight	- 1) / bh)
+		 ex = math.ceil((self.drawRange.ex - layer.x / self.tilewidth	+ 1) / bw)
+		 ey = math.ceil((self.drawRange.ey - layer.y / self.tileheight	+ 1) / bh)
+		mx = math.ceil(self.width / bw)
+		my = math.ceil(self.height / bh)
+	 else
+		 bw = self.tilewidth
+		 bh = self.tileheight
+		 sx = self.drawRange.sx-1
+		 sy = self.drawRange.sy-1
+		 ex = self.drawRange.ex+1
+		 ey = self.drawRange.ey+1
+		 mx=layer.width
+		 my=layer.height
+		 --print(bw,bh,sx,sy,ex,ey,mx,my)
+	end
+
 
 	for by=sy, ey do
 		for bx=sx, ex do
 			if bx >= 1 and bx <= mx and by >= 1 and by <= my then
-				for _, batches in pairs(layer.batches.data) do
-					local batch = batches[by] and batches[by][bx]
+				if not byTile then
+					for _, batches in pairs(layer.batches.data) do
+						local batch = batches[by] and batches[by][bx]
 
-					if batch then
-						framework.draw(batch, math.floor(layer.x), math.floor(layer.y))
+						if batch then
+							framework.draw(batch, math.floor(layer.x), math.floor(layer.y))
+						end
+					end
+				else
+					local tile=layer.data[by][bx]
+					if tile then
+						local tw=self.tilewidth
+						local th=self.tileheight
+						if self.orientation == "orthogonal" then
+							tx = bx * tw + tile.offset.x
+							ty = by * th + tile.offset.y
+
+							origx = tx
+							origy = ty
+
+							-- Compensation for scale/rotation shift
+							local compx = 0
+							local compy = 0
+							if tile.sx < 0 then compx = tw end
+							if tile.sy < 0 then compy = th end
+
+							if tile.r > 0 then
+								tx = tx + th - compy
+								ty = ty + th - tw + compx
+							elseif tile.r < 0 then
+								tx = tx + compy
+								ty = ty + th - compx
+							else
+								tx = tx + compx
+								ty = ty + compy
+							end
+						elseif self.orientation == "isometric" then
+							tx = (bx - by) * (tw / 2) + tile.offset.x + layer.width * tw / 2
+							ty = (bx + by) * (th / 2) + tile.offset.y
+						elseif self.orientation == "staggered" then
+							if by % 2 == 0 then
+								tx = bx * tw + tw / 2 + tile.offset.x
+							else
+								tx = bx * tw + tile.offset.x
+							end
+
+							ty = by * th / 2 + tile.offset.y + th / 2
+						end
+
+						local ts = tile.tileset
+						local image = self.tilesets[tile.tileset].image
+						framework.draw(image,tile.quad,(bx-1)*bw,(by-4)*bh)
 					end
 				end
 			end
