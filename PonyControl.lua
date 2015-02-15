@@ -1,4 +1,4 @@
-require("AnimGroup")
+require("libs.AnimGroup")
 
 local ponyControl = {}
 ponyControl.__index = ponyControl

@@ -1,4 +1,4 @@
-require("AnAL")
+require("libs.AnAL")
 
 local animGroup = {}
 animGroup.__index = animGroup
