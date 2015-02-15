@@ -37,7 +37,7 @@ function love.load()
 		{"w","a","s","d"}, FC_double_key_only_one,
 		"lshift",FC_double_key
 	)	
-		maingame=newExploreGame("town",mainCharacter,100,100)
+		maingame=newExploreGame("levels/town",mainCharacter,100,100)
 	
 		loveframes.SetState("game-explore")
 	end

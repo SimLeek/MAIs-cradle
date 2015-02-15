@@ -385,6 +385,12 @@ function Map:setTiles(index, tileset, gid)
 				end
 			end
 
+			if tileset.tileoffset==nil then
+				tileset.tileoffset={}
+				tileset.tileoffset.x=0
+				tileset.tileoffset.y=0
+			end
+
 			local tile = {
 				id 			= id,
 				gid			= gid,
@@ -481,6 +487,7 @@ function Map:setObjectCoordinates(layer)
 		local w = object.width
 		local h = object.height
 		local r = object.rotation
+		if r==nil then r=0 end
 		local cos = math.cos(math.rad(r))
 		local sin = math.sin(math.rad(r))
 
