@@ -1,6 +1,6 @@
 require("PonyControl")
-require("FinerControl")
-require("Collision")
+require("libs.FinerControl")
+require("libs.Collision")
 require("LevelLoad")
 local sti = require "libs.sti"
 

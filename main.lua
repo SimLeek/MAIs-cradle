@@ -44,7 +44,7 @@ function love.load()
 
 	frame:SetState("mainmenu")
 
-	require("DialogueWindow")	
+	require("libs.DialogueWindow")	
 
 end
 

@@ -1,4 +1,4 @@
-require("AI")
+require("libs.AI")
 
 local level = {}
 level.__index= level

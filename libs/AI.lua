@@ -1,5 +1,5 @@
 require("PonyControl")
-require("DialogueWindow")
+require("libs.DialogueWindow")
 local AI = {}
 AI.__index = AI
 
