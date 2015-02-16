@@ -1,3 +1,11 @@
+#Changing Engines!
+
+I've run into a few problems with Love2d, namely the ridiculously low sprite limit, lack of 3D collisions, lack of bindings for 3D collision libraries, lack of tmx editing libraries, lack of portability, etc.
+
+For these reasons, I'll be switching to cocos2d-x and bullet, and I'll be sticking to c++ and python. This switch may take a little while, as I'll have to learn cocos2d-x and bullet.
+
+I'll be making these changes in the c++ branch.
+
 # the-Open-Source-Pony-Game
 Let's see how fast I can develop a video game
 
