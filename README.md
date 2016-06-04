@@ -1,10 +1,8 @@
-#Changing Engines!
+#Back in development! 
 
-I've run into a few problems with Love2d, namely the ridiculously low sprite limit, lack of 3D collisions, lack of bindings for 3D collision libraries, lack of tmx editing libraries, lack of portability, etc.
+I just realized I don't need 3d collisions. I can just put 'sloped' collision boxes/parralelograms that give the ange and slope of a slope going between two layers...
 
-For these reasons, I'll be switching to cocos2d-x and bullet, and I'll be sticking to c++ and python. This switch may take a little while, as I'll have to learn cocos2d-x and bullet.
-
-I'll be making these changes in the c++ branch.
+Well, if I get this going somewhere again, it'll be a nice platform to test my Mathematical AI against. 
 
 # the-Open-Source-Pony-Game
 Let's see how fast I can develop a video game
