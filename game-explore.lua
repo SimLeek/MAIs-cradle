@@ -46,6 +46,8 @@ function ExploreGame:draw()
 	self.level:draw_beneath()
 
 	local x,y=self.mainCharacter:getPosition()
+  local x=-x
+  local y=-y
 
 	self.mainCharacter:draw(self.ww/2-48,self.wh/2-48)
 	

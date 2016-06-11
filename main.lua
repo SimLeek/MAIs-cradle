@@ -1,16 +1,22 @@
 
+
+
 function love.load()
+
+love.window.setMode(800, 600, {resizable=true, vsync=false, minwidth=400, minheight=300})
+
 
 	bgImage=love.graphics.newImage("backgrounds/Cloudsville.png")
 
-	loveframes=require("libs.LoveFrames")
+  loveframes=require("libs.LoveFrames")
+	
 	require("game-explore")
 
 	math.randomseed(os.time())
 
 	love.keyboard.setKeyRepeat(false)
 
-	loveframes.SetState("mainmenu")
+  loveframes.SetState("mainmenu")
 	frame = loveframes.Create("frame")
 	frame:SetName("OSPG MAIN MENU")
 	frame:SetResizable(true)
@@ -27,22 +33,24 @@ function love.load()
 	singlePlayerButton:SetText("New Game"):SetWidth(100):Center()
 	--singlePlayerButton.DrawColor={255,0,0,255}
 	singlePlayerButton.OnClick = function(object)
+    print("clicked")
 		mainCharacter= newPony("sprites", 
 		"w", love.keyboard.isDown,
 		"s", love.keyboard.isDown,
 		"a", love.keyboard.isDown,
 		"d", love.keyboard.isDown,
 		"lshift", love.keyboard.isDown,
-		" ", love.keyboard.isDown,
+		"space", love.keyboard.isDown,
 		{"w","a","s","d"}, FC_double_key_only_one,
 		"lshift",FC_double_key
 	)	
-		maingame=newExploreGame("levels/town",mainCharacter,100,100)
-	
+		maingame=newExploreGame("levels/town.lua",mainCharacter,100,100)
 		loveframes.SetState("game-explore")
 	end
 
 	frame:SetState("mainmenu")
+  --singlePlayerButton.OnClick()
+  
 
 	require("libs.DialogueWindow")	
 

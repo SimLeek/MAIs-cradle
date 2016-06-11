@@ -294,13 +294,13 @@ function level:draw_beneath()
 	love.graphics.push()
 		love.graphics.translate(-x+w/2,-y+h/2) 
 
-		self.map:setDrawRange(-x+w/2,-y+h/2,w,h)
+		self.map:setDrawRange(x-w/2,y-h/2,w,h)
 		for i=self.min_layer,self.on_layer,1 do
 			if self.map.layers["Tile Layer " .. i]~=nil then
 				self.map:drawTileLayer{"Tile Layer " .. i}
 			end
 		end
-		self.map:setDrawRange(-x+w/2,-y+h/2,w,h/2)
+		self.map:setDrawRange(x-w/2,y-h/2,w,h/2)
 		local l=1
 		for i=self.on_layer+1,self.on_layer+2,1 do
 			if self.map.layers["Tile Layer " .. i]~=nil then
@@ -328,14 +328,15 @@ function level:draw_above()
 		love.graphics.translate(-x+w/2,-y+h/2) 
 
 		l=0
+    --self.map:setDrawRange(x-w/2,y+62-21*(l),w,h/2+86)
 		for i=self.on_layer+1,self.on_layer+2,1 do
 			if self.map.layers["Tile Layer " .. i]~=nil then
-				self.map:setDrawRange(-x+w/2,-y-62+21*(l),w,h/2+86)
+				self.map:setDrawRange(x-w/2,y+62-21*(l),w,h/2+86)
 				self.map:drawTileLayer{"Tile Layer " .. i, byTile=true}
 			end
 			l=l+1
 		end
-		self.map:setDrawRange(-x+w/2,-y+h/2,w,h)
+		self.map:setDrawRange(x-w/2,y-h/2,w,h)
 		for i=self.on_layer+3,self.max_layer,1 do
 			if self.map.layers["Tile Layer " .. i]~=nil then
 				self.map:drawTileLayer{"Tile Layer " .. i}
