@@ -1,0 +1,6 @@
+[submodule "libs/SUIT"]
+	path = libs/SUIT
+	url = https://github.com/vrld/SUIT.git
+[submodule "libs/STI"]
+	path = libs/STI
+	url = https://github.com/karai17/Simple-Tiled-Implementation.git
